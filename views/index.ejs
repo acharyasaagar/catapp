@@ -1,1 +1,27 @@
-<h1>Hello from home page</h1>
+<% include partials/header %>
+<div class="container">
+  <header class="jumbotron">
+      <div class="container">
+          <h1>Welcome to <strong>CatApp</strong></h1>
+          <p>
+            <a href="/cats/new" class="btn btn-primary btn-lg">Add a Cat</a>
+          </p>  
+      </div>  
+  </header>
+  <div class="row" >
+      <% cats.forEach((cat) => {  %>
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+              <div class="card w-100 p-3 mb-3 align-self-stretch">
+                  <img class="card-img-top img-fluid" src="<%= cat.image %>" alt="Cat Image" style="overflow:hidden">
+                  <div class="card-block">
+                      <h6 class="card-title"><%= cat.title %></h6>
+                      <div class="text-center py-2">
+                          <a href="/cats/<%= cat._id %>" class="btn btn-primary btn-block">Read More</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      <%  }) %>
+      </div>  
+  </div>
+<% include partials/footer %>
