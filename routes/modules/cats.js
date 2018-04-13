@@ -16,5 +16,11 @@ router.route('/new')
   .get((req, res) => {
     res.render('new')
   })
+router.route('/:id')
+  .get((req, res) => {
+    Cats.findById(req.params.id, (err, cat) => {
+      res.render('cat', { cat })      
+    })
+  })
 
 module.exports = router
