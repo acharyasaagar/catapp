@@ -3,5 +3,15 @@
     <h1><%= cat.title %></h1>
     <img src="<%= cat.image %>" alt="Camp Image" class="img-fluid">
     <p class="lead mt-3"><%= cat.details %></p>
+    <div class="row">
+      <div class="col-md-6">
+        <a href="/cats/<%= cat._id %>/edit" class="btn btn-lg btn-primary btn-block">Edit</a>
+      </div>
+      <div class="col-md-6">
+        <form method="POST" action="/cats/<%= cat._id %>?_method=DELETE">
+          <button class="btn btn-warning btn-block btn-lg">Delete</button>
+        </form>
+      </div>      
+    </div>
 </div>
 <% include partials/footer %>

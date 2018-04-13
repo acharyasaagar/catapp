@@ -1,0 +1,24 @@
+<% include partials/header %>
+
+<div class="container">
+<h3 class="text-center mb-5">Edit <%= cat.title %></h3>
+  <div class="row">
+    <div class="col">
+        <form method="POST" action="/cats/<%= cat._id %>?_method=PUT">
+            <div class="form-group w-75 mx-auto">
+                <input class="form-control p-2" type="text" name="title" value="<%= cat.title %>" required>
+            </div>
+            <div class="form-group w-75 mx-auto">
+                <input  class="form-control p-2" type="text" name="image" value="<%= cat.image %>" required>
+            </div>
+            <div class="form-group w-75 mx-auto">
+                <textarea  class="form-control p-2" type="textarea" rows="4" name="details" required><%= cat.details %></textarea>
+            </div>
+            <button class="btn btn-primary btn-block w-75 mx-auto" type="submit">Submit</button>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+<% include partials/footer %>
